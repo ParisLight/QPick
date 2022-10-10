@@ -21,7 +21,7 @@ export default defineConfig({
     },
   },
 
-  base: '/apple/',
+  base: '/QPick/',
   build: {
     outDir: './docs',
   },
