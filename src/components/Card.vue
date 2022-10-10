@@ -1,28 +1,45 @@
 <template>
-	<div class="card">
-		<div 
-			v-if="card.img"
-				class="card__wrapper">
-			<img src="../assets/Apple BYZ S8521.png" alt="card" 	class="card-img">
-			<div 
-				class="card__description">
-				<div
-					v-if="card.name" 
-					class="description">
-					{{ card.name }}
-				</div>
+	<div class="item">
+		
+		<div v-if="!item.price" class="item__wrapper">
+			<a href="#" class="link">
+				
+				<img :src="`../src/assets/${item.img}`" alt="item" class="item-img">
 				<div 
-				v-if="card.price"
+					class="item__description item__covers">
+				<div v-if="item.name"
+					class="description">
+					{{ item.name }}
+				</div>
+			</div>
+			</a>
+			
+		</div>
+		
+		<div v-if="item.price" class="item__wrapper">
+			<img src="../assets/liked.svg" alt="like" class="like item__like">
+
+			<div class="img-wrapper">	
+				<img :src="`../src/assets/${item.img}`" alt="item" class="item-img">
+			</div>
+			
+			<div 
+				class="item__description">
+				<div v-if="item.name"
+					class="description">
+					{{ item.name }}
+				</div>
+				
+				<div v-if="item.price"
 					class="price">
-					{{ card.price }} ₸
+					{{ item.price }} ₸
 				</div>
 			</div>
 			<div class="grade">
-				<img src="../assets/star.svg" alt="star">
+				<img src="@/assets/star.svg" alt="star">
 				<div 
-					class="rate card__rate">{{ card.grade }}</div>
+					class="rate item__rate">{{ item.grade }}</div>
 			</div>
-			
 		</div>
 	</div>
 </template>
@@ -31,30 +48,28 @@
 export default {
 
 	props: {
-		card: {
+		item: {
 			type: Object,
-		}
+		},
+		
 	},
 
 	data(){
 		return {
-
+			
 		}
 	},
 
-	computed: {
-		getImgUrl(){
-			return '../assets/' + card.img;
-		}
-	}
 }
 </script>
 
 <style lang="scss">
-.card{
+
+.item{
 	background: #fff;
 	border-radius: 30px;
 	max-width: 350px;
+	
 		&__wrapper{
 			padding: 15.35px 21px 32.65px 22px;
 			text-align: center;
@@ -68,7 +83,17 @@ export default {
 		&__rate{
 			text-align: left;
 		}
+
+		&__covers{
+			justify-content: center;
+		}
+
+		&-img{
+			margin-bottom: 55px;
+			max-width: 100%;
+		}
 	}
+
 
 	.grade{
 		max-width: 60.5px;

@@ -3,9 +3,21 @@
 		<Header />
 		<Banner />
 		<ListCards
-			:cardList="cardList"
-		/>
-		<Footer />
+			:itemsList="coversList"
+		>
+			Чехлы
+		</ListCards>
+		<ListCards
+			:itemsList="headphones"
+		>
+			Наушники
+		</ListCards>
+		<ListCards
+			:itemsList="wireless"
+		>
+			Беспроводные наушники
+		</ListCards>
+		<Footer style="margin-top: 60px;" />
 	</div>
 </template>
 
@@ -20,59 +32,65 @@ export default {
 	
   components: { Header, Footer, Banner, Card, ListCards },
 
-		data(){
+	data(){
 			return {
-				cardList: [
+				headphones: [
 					{
 						name: "Apple BYZ S8521",
 						img: 'Apple BYZ S8521.png',
-						price: 2327,
+						price: 2321,
+						grade: '4.7',
+						category: 'Наушники',
+					},
+					{
+						name: "Apple EarPods",
+						img: 'Apple EarPods.png',
+						price: 2322,
+						grade: '4.7',
+						category: 'Наушники'
+					},
+					{
+						name: "Apple EarPods",
+						img: 'Apple EarPods2.png',
+						price: 2323,
 						grade: '4.7',
 						category: 'Наушники'
 					},
 					{
 						name: "Apple BYZ S8521",
 						img: 'Apple BYZ S8521.png',
-						price: 2327,
+						price: 2321,
+						grade: '4.7',
+						category: 'Наушники',
+					},
+					{
+						name: "Apple EarPods",
+						img: 'Apple EarPods.png',
+						price: 2322,
 						grade: '4.7',
 						category: 'Наушники'
+					},
+					{
+						name: "Apple EarPods",
+						img: 'Apple EarPods2.png',
+						price: 2323,
+						grade: '4.7',
+						category: 'Наушники'
+					},
+				],
 
-					},
-					{
-						name: "Apple BYZ S8521",
-						img: 'Apple BYZ S8521.png',
-						price: 2327,
-						grade: '4.7',
-						category: 'Наушники'
-
-					},
-					{
-						name: "Apple BYZ S8521",
-						img: 'Apple BYZ S8521.png',
-						price: 2327,
-						grade: '4.7',
-						category: 'Наушники'
-
-					},
-					{
-						name: "Apple BYZ S8521",
-						img: 'Apple BYZ S8521.png',
-						price: 2327,
-						grade: '4.7',
-						category: 'Наушники'
-
-					},
-					{
-						name: "Apple BYZ S8521",
-						img: 'Apple BYZ S8521.png',
-						price: 2327,
-						grade: '4.7',
-						category: 'Наушники'
-
-					},
+				wireless: [
+					{name: 'Apple AirPods', img: 'Airpods.png'},
+					{name: 'GERLAX GH-04', img: 'Gerlax gh-04.png'},
+					{name: 'BOROFONE BO4', img: 'borofone bo4.png'},
+				],
+				coversList: [
+					{name: 'Стеклянные', img: 'glasses.png'},
+					{name: 'Силиконовые', img: 'silicone.png'},
+					{name: 'Кожаные', img: 'leather.png'},
 				]
 			}
-		}
+	}
 }
 
 </script>

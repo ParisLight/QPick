@@ -1,5 +1,5 @@
 <template>
-	<div class="banner">
+	<div class="banner banner-mainPage">
 		<div class="banner__wrapper">
 			<h1 class="main-title">Аксессуары для <br> {{ 'Iphone 13 Pro Max' }} </h1>
 			<div class="banner__img">
@@ -16,6 +16,9 @@ export default {
 </script>
 
 <style lang="scss">
+.banner-mainPage{
+	margin-bottom: 14px;
+}
 .banner{
 		background: $primary-color;
 		border-radius: 30px;
