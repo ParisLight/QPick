@@ -3,8 +3,10 @@
 		
 		<div v-if="!item.price" class="item__wrapper">
 			<a href="#" class="link">
-				
-				<img :src="`../src/assets/${item.img}`" alt="item" class="item-img">
+				<div class="img-wrapper">
+					<img :src="`../src/assets/${item.img}`" alt="item" class="item-img">
+				</div>
+
 				<div 
 					class="item__description item__covers">
 				<div v-if="item.name"
@@ -20,7 +22,7 @@
 			<img src="../assets/liked.svg" alt="like" class="like item__like">
 
 			<div class="img-wrapper">	
-				<img :src="`../src/assets/${item.img}`" alt="item" class="item-img">
+				<img :src="`/src/assets/${item.img}`" alt="item" class="item-img">
 			</div>
 			
 			<div 
@@ -60,6 +62,10 @@ export default {
 		}
 	},
 
+	computed: {
+		
+	}
+
 }
 </script>
 
@@ -72,7 +78,7 @@ export default {
 	
 		&__wrapper{
 			padding: 15.35px 21px 32.65px 22px;
-			text-align: center;
+			// text-align: center;
 		}
 
 		&__description{
@@ -92,8 +98,13 @@ export default {
 			margin-bottom: 55px;
 			max-width: 100%;
 		}
+
+		
 	}
 
+	.img-wrapper{
+		text-align: center;
+	}
 
 	.grade{
 		max-width: 60.5px;
