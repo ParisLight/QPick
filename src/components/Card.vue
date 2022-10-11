@@ -4,7 +4,7 @@
 		<div v-if="!item.price" class="item__wrapper">
 			<a href="#" class="link">
 				<div class="img-wrapper">
-					<img :src="`../src/assets/${item.img}`" alt="item" class="item-img">
+					<img :src="`../assets/${item.img}`" alt="item" class="item-img">
 				</div>
 
 				<div 
@@ -22,7 +22,7 @@
 			<img src="../assets/liked.svg" alt="like" class="like item__like">
 
 			<div class="img-wrapper">	
-				<img :src="`/src/assets/${item.img}`" alt="item" class="item-img">
+				<img :src="`../assets/${item.img}`" alt="item" class="item-img">
 			</div>
 			
 			<div 
