@@ -22,7 +22,7 @@
 			<img src="../assets/liked.svg" alt="like" class="like item__like">
 
 			<div class="img-wrapper">	
-				<img :src="`../assets/${Airpods.png}`" alt="item" class="item-img">
+				<img :src="`../assets/${item.img}.png`" alt="item" class="item-img">
 			</div>
 			
 			<div 
