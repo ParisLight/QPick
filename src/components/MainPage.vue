@@ -44,21 +44,21 @@ export default {
 					},
 					{
 						name: "Apple EarPods",
-						img: 'Apple EarPods',
+						img: 'Apple EarPods.png',
 						price: 2322,
 						grade: '4.7',
 						category: 'Наушники'
 					},
 					{
 						name: "Apple EarPods",
-						img: 'Apple EarPods2',
+						img: 'Apple EarPods2.png',
 						price: 2323,
 						grade: '4.7',
 						category: 'Наушники'
 					},
 					{
 						name: "Apple BYZ S8521",
-						img: 'Apple BYZ S8521',
+						img: 'Apple BYZ S8521.png',
 						price: 2321,
 						grade: '4.7',
 						category: 'Наушники',
