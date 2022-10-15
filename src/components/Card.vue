@@ -19,10 +19,14 @@
 		</div>
 		
 		<div v-if="item.price" class="item__wrapper">
-			<img src="@/assets/liked.svg" alt="like" class="like item__like">
+			<img class="like item__like"
+				@click="isLiked" 
+				:src="this.like ? 'src/assets/liked.svg' : 'src/assets/like.svg'" 
+				alt="like"
+			>
 			<div class="wrap">
 				<div class="img-wrapper">
-					<img :src="`./src/assets/${item.img}`" alt="item" class="item-img">
+					<img :src="`src/assets/${item.img}`" alt="item" class="item-img">
 				</div>
 				
 				<div class="item__description">
@@ -74,8 +78,15 @@ export default {
 
 	data(){
 		return {
-			
+			like: false,
 		}
+	},
+
+	methods: {
+		isLiked() {
+			this.like = !this.like;
+			console.log(this.like)
+		},
 	},
 
 	computed: {
@@ -130,10 +141,15 @@ export default {
 		}
 	}
 
+	.like{
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+	}
+
 	.img-wrapper{
 		text-align: center;
 		min-height: 240px;
-		
 	}
 
 	.grade{

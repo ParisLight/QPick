@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import Header from './Header.vue';
-import Footer from './Footer.vue';
-import Banner from './Banner.vue';
-import Card from './Card.vue';
-import ListCards from './ListCards.vue';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import Banner from '@/components/Banner.vue';
+import Card from '@/components/Card.vue';
+import ListCards from '@/components/ListCards.vue';
 
 export default {
 	
@@ -36,6 +36,7 @@ export default {
 			return {
 				headphones: [
 					{
+						id: 1,
 						name: "Apple BYZ S8521",
 						img: 'Apple BYZ S8521.png',
 						price: 2321,
@@ -44,6 +45,7 @@ export default {
 						oldPrice: 3527,
 					},
 					{
+						id: 2,
 						name: "Apple EarPods",
 						img: 'Apple EarPods.png',
 						price: 2322,
@@ -53,6 +55,7 @@ export default {
 						percent: 20,
 					},
 					{
+						id: 3,
 						name: "Apple EarPods",
 						img: 'Apple EarPods2.png',
 						price: 2323,
@@ -60,6 +63,7 @@ export default {
 						category: 'Наушники'
 					},
 					{
+						id: 3,
 						name: "Apple BYZ S8521",
 						img: 'Apple BYZ S8521.png',
 						price: 2321,
@@ -67,6 +71,7 @@ export default {
 						category: 'Наушники',
 					},
 					{
+						id: 4,
 						name: "Apple EarPods",
 						img: 'Apple EarPods.png',
 						price: 2322,
@@ -74,6 +79,7 @@ export default {
 						category: 'Наушники'
 					},
 					{
+						id: 5,
 						name: "Apple EarPods",
 						img: 'Apple EarPods2.png',
 						price: 2323,
@@ -83,14 +89,14 @@ export default {
 				],
 
 				wireless: [
-					{name: 'Apple AirPods', img: 'Airpods.png', price: 2323, grade: '4.7'},
-					{name: 'GERLAX GH-04', img: 'Gerlax gh-04.png', price: 2323, grade: '4.7'},
-					{name: 'BOROFONE BO4', img: 'borofone bo4.png', price: 2323, grade: '4.7'},
+					{ id: 6, name: 'Apple AirPods', img: 'Airpods.png', price: 2323, grade: '4.7'},
+					{ id: 7, name: 'GERLAX GH-04', img: 'Gerlax gh-04.png', price: 2323, grade: '4.7'},
+					{ id: 8, name: 'BOROFONE BO4', img: 'borofone bo4.png', price: 2323, grade: '4.7'},
 				],
 				coversList: [
-					{name: 'Стеклянные', img: 'glasses.png', },
-					{name: 'Силиконовые', img: 'silicone.png'},
-					{name: 'Кожаные', img: 'leather.png'},
+					{ id: 9, name: 'Стеклянные', img: 'glasses.png', },
+					{ id: 10, name: 'Силиконовые', img: 'silicone.png'},
+					{ id: 11, name: 'Кожаные', img: 'leather.png'},
 				]
 			}
 	}
