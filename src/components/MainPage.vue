@@ -41,13 +41,16 @@ export default {
 						price: 2321,
 						grade: '4.7',
 						category: 'Наушники',
+						oldPrice: 3527,
 					},
 					{
 						name: "Apple EarPods",
 						img: 'Apple EarPods.png',
 						price: 2322,
 						grade: '4.7',
-						category: 'Наушники'
+						category: 'Наушники',
+						sale: 2000,
+						percent: 20,
 					},
 					{
 						name: "Apple EarPods",
@@ -80,12 +83,12 @@ export default {
 				],
 
 				wireless: [
-					{name: 'Apple AirPods', img: 'Airpods.png'},
-					{name: 'GERLAX GH-04', img: 'Gerlax gh-04.png'},
-					{name: 'BOROFONE BO4', img: 'borofone bo4.png'},
+					{name: 'Apple AirPods', img: 'Airpods.png', price: 2323, grade: '4.7'},
+					{name: 'GERLAX GH-04', img: 'Gerlax gh-04.png', price: 2323, grade: '4.7'},
+					{name: 'BOROFONE BO4', img: 'borofone bo4.png', price: 2323, grade: '4.7'},
 				],
 				coversList: [
-					{name: 'Стеклянные', img: 'glasses.png'},
+					{name: 'Стеклянные', img: 'glasses.png', },
 					{name: 'Силиконовые', img: 'silicone.png'},
 					{name: 'Кожаные', img: 'leather.png'},
 				]
