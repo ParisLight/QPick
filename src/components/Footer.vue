@@ -2,7 +2,7 @@
 	<footer class="footer">
 		<div class="footer__wrapper">
 			<div class="logo footer__logo">
-				<a href="#" class="link">QPICK</a>
+				<router-link class="link" to="/Home">QPICK</router-link>
 			</div>
 			<div class="links footer__links">
 				<div class="footer__links--left">
@@ -17,9 +17,7 @@
 					</a>
 				</div>
 				<div class="footer__links--right">
-					<a href="#" class="link footer__link-active">
-						Условия сервиса
-					</a>
+					<router-link class="link footer__link-active" to="/Service">Условия сервиса</router-link>
 					<div class="language footer__language">
 						<img class="lang" src="../assets/lang.svg" alt="lang">
 						<a href="#" class="link">

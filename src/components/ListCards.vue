@@ -5,7 +5,7 @@
 			class="list__wrapper" 
 		>
 		<Card v-for="item in itemsList" 
-			:key="item.id"
+			:key="item.index"
 			:item="item"
 		/>
 		</div>
@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 	.title{
 		font-weight: 600;
 		color: #838383;

@@ -2,7 +2,7 @@
 	<header class="header">
 		<div class="header__wrapper">
 			<div class="logo header__logo">
-				<a href="#" class="link">QPICK</a>
+				<router-link class="link" to="/Home">QPICK</router-link>
 			</div>
 			<div class="model header__model">
 				<img class="phone header__phone" src="../assets/phone.svg" alt="phone">

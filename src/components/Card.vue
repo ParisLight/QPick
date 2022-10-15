@@ -34,26 +34,43 @@
 						{{ item.name }}
 					</div>
 				
-					<div v-if="item.price && !item.oldPrice" class="price">
+					<div v-if="item.price && !item.newPrice" class="price">
 						{{ item.price }} ₸
 					</div>
 				
-					<div v-if="item.oldPrice" class="price">
+					<div class="newPrice" v-if="item.newPrice && !item.sale">
+						<div class="newPrice-count price ">
+							{{ item.newPrice }}₸
+						</div>
+						<div class="newPrice__price">
+							{{ item.price }} ₸
+						</div>
+					</div>
+
+					<div class="sale" v-if="item.sale">
+						<div class="newPrice sale__newPrice">
+							<div class="newPrice-count sale__newPrice-count">
+								{{ item.newPrice }}₸
+							</div>
+							
+							<div class="newPrice__price sale__newPrice-wrapper">
+								<div class="sale__newPrice-inner">{{ item.price }} ₸</div>
+							</div>
+						</div>
+						<div class="sale-percent">-{{ item.sale }}%</div>
+					</div>
+					<!-- <div v-if="item.oldPrice" class="price">
 						{{ item.price }} ₸
 						<div class="old-price" v-if="item.oldPrice"> {{ item.oldPrice }} ₸ </div>
 					</div>
 				
 					<div class="sale" v-if="item.sale">
-						<div v-if="item.price" class="price sale__price">
+						<div class="price">
 							{{ item.price }} ₸
-							<div class="old-price sale__old-price" v-if="item.oldPrice">
-								<div class="sale__olde-price-inner">
-									{{ item.oldPrice }} ₸
-								</div>
-							</div>
+							<div class="old-price" v-if="item.oldPrice"> {{ item.oldPrice }} ₸ </div>
 						</div>
 					</div>
-					<div v-if="item.sale" class="sale-percent">-{{ item.percent }}%</div>
+					<div v-if="item.sale" class="sale-percent">-{{ item.percent }}%</div> -->
 				</div>
 				
 				<div class="grade">
@@ -110,7 +127,6 @@ export default {
 	min-height: 407px;
 		&__wrapper{
 			padding: 15.35px 21px 32.65px 22px;
-			// text-align: center;
 			height: 100%;
 		}
 
@@ -130,7 +146,6 @@ export default {
 
 		&-img{
 			margin-bottom: 55px;
-			object-fit: fill;
 			max-width: 220px;
 			min-height: 238px;
 			object-fit: contain;
@@ -140,7 +155,12 @@ export default {
 			display: block;
 		}
 	}
-
+	.newPrice__price{
+		text-decoration: line-through 2px;
+		color: #FFCE7F;
+		text-align: center;
+		font-size: 13px;
+	}
 	.like{
 		cursor: pointer;
 		width: 20px;
@@ -163,27 +183,31 @@ export default {
 		display: flex;
 		justify-content: space-between;
 
-		&__old-price{
-			color: #DF6464;
+		&-percent{
+			font-weight: 600;
+				line-height: 19.86px;
+				color: #DF6464;
 		}
 
-		&__old-price-inner{
-			color: #AAAAAA;
+		&__newPrice{
+			margin-right: 25px;
+
+			&-count{
+				color: #DF6464;
+				font-size: 19.17px;
+				font-weight: 600;
+			}
+
+			&-wrapper{
+					color: #DF6464;
+			}
+
+			&-inner{
+				color: #AAAAAA;
+			}
 		}
 	}
 
-	.sale-percent{
-		font-weight: 600;
-		line-height: 19.86px;
-		color: #DF6464;
-
-	}
-	.old-price{
-		text-decoration: line-through 2px;
-		color: #FFCE7F;
-		text-align: center;
-		font-size: 13px;
-	}
 	.description{
 		font-size: 17px;
 		font-weight: 600;
