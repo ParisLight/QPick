@@ -1,10 +1,10 @@
 <template>
 	<div class="item">
-		
+
 		<div v-if="!item.price" class="item__wrapper">
 			<a href="#" class="link">
 				<div class="img-wrapper">
-					<img :src="`./src/assets/${item.img}`" alt="item" class="item-img">
+					<img :src="`./src/assets/mainPage/${item.img}`" alt="item" class="item-img">
 				</div>
 
 				<div 
@@ -19,14 +19,14 @@
 		</div>
 		
 		<div v-if="item.price" class="item__wrapper">
-			<img class="like item__like"
-				@click="isLiked" 
-				:src="this.like ? 'src/assets/liked.svg' : 'src/assets/like.svg'" 
-				alt="like"
-			>
+			<div class="like item__like">
+				<img  @click="isLiked"
+					:src="this.like ? 'src/assets/mainPage/liked.svg' : 'src/assets/mainPage/like.svg'" alt="like">
+			</div>
+			
 			<div class="wrap">
 				<div class="img-wrapper">
-					<img :src="`src/assets/${item.img}`" alt="item" class="item-img">
+					<img :src="`src/assets/mainPage/${item.img}`" alt="item" class="item-img">
 				</div>
 				
 				<div class="item__description">
@@ -46,12 +46,12 @@
 							{{ item.price }} ₸
 						</div>
 					</div>
-
+					
 					<div class="sale" v-if="item.sale">
 						<div class="newPrice sale__newPrice">
-							<div class="newPrice-count sale__newPrice-count">
+							<span class="newPrice-count sale__newPrice-count">
 								{{ item.newPrice }}₸
-							</div>
+							</span>
 							
 							<div class="newPrice__price sale__newPrice-wrapper">
 								<div class="sale__newPrice-inner">{{ item.price }} ₸</div>
@@ -59,23 +59,11 @@
 						</div>
 						<div class="sale-percent">-{{ item.sale }}%</div>
 					</div>
-					<!-- <div v-if="item.oldPrice" class="price">
-						{{ item.price }} ₸
-						<div class="old-price" v-if="item.oldPrice"> {{ item.oldPrice }} ₸ </div>
-					</div>
-				
-					<div class="sale" v-if="item.sale">
-						<div class="price">
-							{{ item.price }} ₸
-							<div class="old-price" v-if="item.oldPrice"> {{ item.oldPrice }} ₸ </div>
-						</div>
-					</div>
-					<div v-if="item.sale" class="sale-percent">-{{ item.percent }}%</div> -->
 				</div>
 				
 				<div class="grade">
-					<img src="@/assets/star.svg" alt="star">
-					<div class="rate item__rate">{{ item.grade }}</div>
+					<img src="@/assets/mainPage/star.svg" class="star" alt="star">
+					<span class="rate item__rate">{{ item.grade }}</span>
 				</div>
 			</div>
 			
@@ -115,16 +103,13 @@ export default {
 
 <style lang="scss">
 .wrap{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	
+	height: 100%;
 }
 .item{
 	background: #fff;
 	border-radius: 30px;
 	max-width: 350px;
-	min-height: 407px;
+	max-height: 407px;
 		&__wrapper{
 			padding: 15.35px 21px 32.65px 22px;
 			height: 100%;
@@ -133,11 +118,8 @@ export default {
 		&__description{
 			display: flex;
 			justify-content: space-between;
-			
-		}
-
-		&__rate{
-			text-align: left;
+			align-items: flex-start;
+			width: 100%;
 		}
 
 		&__covers{
@@ -145,16 +127,20 @@ export default {
 		}
 
 		&-img{
-			margin-bottom: 55px;
 			max-width: 220px;
 			min-height: 238px;
 			object-fit: contain;
 		}
 
 		&__like{
-			display: block;
+			position: absolute;
 		}
 	}
+
+	.t{
+		position: absolute;
+	}
+
 	.newPrice__price{
 		text-decoration: line-through 2px;
 		color: #FFCE7F;
@@ -169,19 +155,21 @@ export default {
 
 	.img-wrapper{
 		text-align: center;
-		min-height: 240px;
+		max-height: 237px;
+		margin-bottom: 55px;
 	}
 
 	.grade{
 		max-width: 60.5px;
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: space-between;
-		margin-top: 25px;
+
 	}
 	.sale{
 		display: flex;
 		justify-content: space-between;
+		align-items: flex-start;
 
 		&-percent{
 			font-weight: 600;
@@ -213,6 +201,7 @@ export default {
 		font-weight: 600;
 		line-height: 20.72px;
 		color: #1C1C27;
+		
 	}
 
 	.price{
@@ -226,6 +215,6 @@ export default {
 		font-weight: 600;
 		line-height: 20.72px;
 		color: #838383;
-		position: relative;
+		
 	}
 </style>

@@ -16,6 +16,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    .list-terms{
+        margin-top: 61px;
+        margin-bottom: 90px;
+    }
 </style>

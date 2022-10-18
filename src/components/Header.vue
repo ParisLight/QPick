@@ -5,7 +5,7 @@
 				<router-link class="link" to="/Home">QPICK</router-link>
 			</div>
 			<div class="model header__model">
-				<img class="phone header__phone" src="../assets/phone.svg" alt="phone">
+				<img class="phone header__phone" src="../assets/Header/phone.svg" alt="phone">
 				<select class="select header__select" name="" id="">
 					<option disabled selected value="">Выбрать модель телефона</option>
 					<option value="">Выбрать модель телефона</option>
@@ -16,7 +16,7 @@
 			<div class="info header__info">
 				<div class="header__img-wrapper">
 					<a href="#" class="link">
-						<img class="favorites-img header__svg" src="../assets/like.svg" alt="favorites">
+						<img class="favorites-img header__svg" src="../assets/Header/like.svg" alt="favorites">
 						<div class="counter">
 							{{ 2 }}
 						</div>
@@ -26,7 +26,7 @@
 				</div>
 				<div class="header__img-wrapper header__basket-img-wrapper">
 					<a href="#" class="link">
-						<img class="basket-img header__svg" src="../assets/basket.svg" alt="basket">
+						<img class="basket-img header__svg" src="../assets/Header/basket.svg" alt="basket">
 						<div class="counter">
 							{{ 1 }}
 						</div>

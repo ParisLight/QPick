@@ -1,23 +1,20 @@
 <template>
 	<div class="container">
-		<Header />
-		<Banner />
-		<ListCards
-			:itemsList="coversList"
-		>
-			Чехлы
-		</ListCards>
-		<ListCards
-			:itemsList="headphones"
-		>
-			Наушники
-		</ListCards>
-		<ListCards
-			:itemsList="wireless"
-		>
-			Беспроводные наушники
-		</ListCards>
-		<Footer style="margin-top: 60px;" />
+		<div class="content">
+			<Header />
+			<Banner />
+			<ListCards :itemsList="coversList">
+				Чехлы
+			</ListCards>
+			<ListCards :itemsList="headphones">
+				Наушники
+			</ListCards>
+			<ListCards :itemsList="wireless">
+				Беспроводные наушники
+			</ListCards>
+			<Footer style="margin-top: 60px;" />
+		</div>
+		
 	</div>
 </template>
 
@@ -111,5 +108,11 @@ export default {
 		max-width: 1185px;
 		margin: 0 auto;
 		padding: 0 25px;
+	}
+
+	.content{
+			display: flex;
+			flex-direction: column;
+			min-height: 100%;
 	}
 </style>

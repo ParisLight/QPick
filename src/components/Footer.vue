@@ -12,14 +12,14 @@
 					<a href="#" class="link footer__link--nav footer__link-active">
 						Корзина
 					</a>
-					<a href="#" class="link footer__link--nav footer__link-active">
-						Контакты
-					</a>
+						<router-link class="link footer__link--nav footer__link-active" to="/Contacts">
+							Контакты
+						</router-link>
 				</div>
 				<div class="footer__links--right">
 					<router-link class="link footer__link-active" to="/Service">Условия сервиса</router-link>
 					<div class="language footer__language">
-						<img class="lang" src="../assets/lang.svg" alt="lang">
+						<img class="lang" src="../assets/Footer/lang.svg" alt="lang">
 						<a href="#" class="link">
 							<span class="language-item footer__language-item footer__link-active">Каз</span>
 						</a>
@@ -34,16 +34,16 @@
 			</div>
 			<div class="social footer__social">
 				<a href="#" class="link footer__link">
-					<img class="social__item" src="../assets/VK.svg" alt="vk">
+					<img class="social__item" src="../assets/Footer/VK.svg" alt="vk">
 				</a>
 				<a href="#" class="link footer__link">
-					<img class="social__item" src="../assets/Instagram.svg" alt="instagram">
+					<img class="social__item" src="../assets/Footer/Instagram.svg" alt="instagram">
 				</a>
 				<a href="#" class="link footer__link">
-					<img class="social__item" src="../assets/Telegram.svg" alt="telegram">
+					<img class="social__item" src="../assets/Footer/Telegram.svg" alt="telegram">
 				</a>
 				<a href="#" class="link footer__link ">
-					<img class="social__item" src="../assets/Whatsapp.svg" alt="whatsapp">
+					<img class="social__item" src="../assets/Footer/Whatsapp.svg" alt="whatsapp">
 				</a>
 			</div>
 		</div>
@@ -61,6 +61,7 @@ export default {
 .footer{
 		background: #fff;
 		border-radius: 30px 30px 0 0;
+		flex: 0 0 auto;
 		&__link:not(:first-child){
 			margin-left: 18px;
 		}
