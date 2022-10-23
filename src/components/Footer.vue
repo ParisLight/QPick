@@ -6,15 +6,15 @@
 			</div>
 			<div class="links footer__links">
 				<div class="footer__links--left">
-					<a href="#" class="link footer__link--nav footer__link-active">
+					<router-link class="link footer__link--nav footer__link-active" to="/Favorites">
 						Избранное
-					</a>
-					<a href="#" class="link footer__link--nav footer__link-active">
+					</router-link>
+					<router-link to="/Basket" class="link footer__link--nav footer__link-active">
 						Корзина
-					</a>
-						<router-link class="link footer__link--nav footer__link-active" to="/Contacts">
-							Контакты
-						</router-link>
+					</router-link>
+					<router-link class="link footer__link--nav footer__link-active" to="/Contacts">
+						Контакты
+					</router-link>
 				</div>
 				<div class="footer__links--right">
 					<router-link class="link footer__link-active" to="/Service">Условия сервиса</router-link>
@@ -61,7 +61,7 @@ export default {
 .footer{
 		background: #fff;
 		border-radius: 30px 30px 0 0;
-		flex: 0 0 auto;
+		flex-shrink: 0;
 		&__link:not(:first-child){
 			margin-left: 18px;
 		}

@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
+		<Header />
 		<div class="content">
-			<Header />
 			<Banner />
 			<ListCards :itemsList="coversList">
 				Чехлы
@@ -12,9 +12,8 @@
 			<ListCards :itemsList="wireless">
 				Беспроводные наушники
 			</ListCards>
-			<Footer style="margin-top: 60px;" />
 		</div>
-		
+		<Footer style="margin-top: 60px;" />
 	</div>
 </template>
 
@@ -24,6 +23,7 @@ import Footer from '@/components/Footer.vue';
 import Banner from '@/components/Banner.vue';
 import Card from '@/components/Card.vue';
 import ListCards from '@/components/ListCards.vue';
+import { useStore } from '@/store.js';
 
 export default {
 	
@@ -104,15 +104,5 @@ export default {
 </script>
 
 <style lang="scss">
-	.container{
-		max-width: 1185px;
-		margin: 0 auto;
-		padding: 0 25px;
-	}
 
-	.content{
-			display: flex;
-			flex-direction: column;
-			min-height: 100%;
-	}
 </style>

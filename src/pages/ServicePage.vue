@@ -1,17 +1,17 @@
 <template>
-		<div class="container">
+		<div class="container service__container">
+			<Header />
 			<div class="content">
-					<Header />
-					<ListTerms :listTerms="terms" class="terms" />
-					<Footer />
+				<ListTerms :listTerms="terms" class="terms" />	
 			</div>
+			<Footer />
 		</div>
 </template>
 
 <script>
-import Header from '../Header.vue';
-import Footer from '../Footer.vue';
-import ListTerms from '../ListTerms.vue';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import ListTerms from '@/components/ListTerms.vue';
 export default {
     components: { Header, Footer, ListTerms },
 		data(){
@@ -32,7 +32,6 @@ export default {
 						text: 'Задача организации, в особенности же курс на социально-ориентированный национальный проект требует от нас системного анализа модели развития! Таким образом, постоянное информационно-техническое обеспечение нашей деятельности требует от нас анализа системы масштабного изменения ряда параметров! С другой стороны социально-экономическое развитие напрямую зависит от всесторонне сбалансированных нововведений?',
 						id: 3,
 					},
-					
 				]
 			}
 		}
@@ -40,18 +39,12 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+html {
+	height: 100%;
 }
-	.content{
-			display: flex;
-			flex-direction: column;
-			min-height: 100%;
-	}
-	.terms{
-		flex: 1 0 auto;
-	}
+
+body {
+	height: 100%;
+}
 
 </style>

@@ -15,22 +15,22 @@
 
 			<div class="info header__info">
 				<div class="header__img-wrapper">
-					<a href="#" class="link">
+					<router-link to="/Favorites" class="link">
 						<img class="favorites-img header__svg" src="../assets/Header/like.svg" alt="favorites">
 						<div class="counter">
 							{{ 2 }}
 						</div>
-					</a>
+					</router-link>
 					
 					
 				</div>
 				<div class="header__img-wrapper header__basket-img-wrapper">
-					<a href="#" class="link">
+					<router-link to="/Basket" class="link">
 						<img class="basket-img header__svg" src="../assets/Header/basket.svg" alt="basket">
 						<div class="counter">
 							{{ 1 }}
 						</div>
-					</a>
+					</router-link>
 				</div>
 			</div>
 		</div>

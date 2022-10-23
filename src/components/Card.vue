@@ -1,6 +1,6 @@
 <template>
 	<div class="item">
-
+		
 		<div v-if="!item.price" class="item__wrapper">
 			<a href="#" class="link">
 				<div class="img-wrapper">
@@ -93,11 +93,6 @@ export default {
 			console.log(this.like)
 		},
 	},
-
-	computed: {
-		
-	}
-
 }
 </script>
 
@@ -109,6 +104,8 @@ export default {
 	background: #fff;
 	border-radius: 30px;
 	max-width: 350px;
+	display: flex;
+	flex-direction: column;
 	max-height: 407px;
 		&__wrapper{
 			padding: 15.35px 21px 32.65px 22px;
@@ -119,7 +116,6 @@ export default {
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-start;
-			width: 100%;
 		}
 
 		&__covers{
@@ -130,10 +126,6 @@ export default {
 			max-width: 220px;
 			min-height: 238px;
 			object-fit: contain;
-		}
-
-		&__like{
-			position: absolute;
 		}
 	}
 
@@ -151,6 +143,7 @@ export default {
 		cursor: pointer;
 		width: 20px;
 		height: 20px;
+		position: absolute;
 	}
 
 	.img-wrapper{
