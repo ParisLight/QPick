@@ -1,69 +1,70 @@
 <template>
 	<div class="item">
 		
-		<div v-if="!item.price" class="item__wrapper">
+		<div v-if="!props.item.price" class="item__wrapper">
 			<a href="#" class="link">
 				<div class="img-wrapper">
-					<img :src="`./src/assets/mainPage/${item.img}`" alt="item" class="item-img">
+					<img :src="`./src/assets/mainPage/${props.item.img}`" alt="item" class="item-img">
 				</div>
 
 				<div 
 					class="item__description item__covers">
-				<div v-if="item.name"
+				<div v-if="props.item.name"
 					class="description">
-					{{ item.name }}
+					{{ props.item.name }}
 				</div>
 			</div>
 			</a>
 			
 		</div>
 		
-		<div v-if="item.price" class="item__wrapper">
-			<div class="like item__like">
-				<img  @click="isLiked"
-					:src="this.like ? 'src/assets/mainPage/liked.svg' : 'src/assets/mainPage/like.svg'" alt="like">
+		<div v-if="props.item.price" class="item__wrapper">
+			<div class="like item__like" >
+				<img  
+					@click="like = !like"
+					:src="like ? 'src/assets/mainPage/liked.svg' : 'src/assets/mainPage/like.svg'" alt="like">
 			</div>
 			
 			<div class="wrap">
 				<div class="img-wrapper">
-					<img :src="`src/assets/mainPage/${item.img}`" alt="item" class="item-img">
+					<img :src="`src/assets/mainPage/${props.item.img}`" alt="item" class="item-img">
 				</div>
 				
 				<div class="item__description">
-					<div v-if="item.name" class="description">
-						{{ item.name }}
+					<div v-if="props.item.name" class="description">
+						{{ props.item.name }}
 					</div>
 				
-					<div v-if="item.price && !item.newPrice" class="price">
-						{{ item.price }} ₸
+					<div v-if="props.item.price && !props.item.newPrice" class="price">
+						{{ props.item.price }} ₸
 					</div>
 				
-					<div class="newPrice" v-if="item.newPrice && !item.sale">
+					<div class="newPrice" v-if="props.item.newPrice && !props.item.sale">
 						<div class="newPrice-count price ">
-							{{ item.newPrice }}₸
+							{{ props.item.newPrice }}₸
 						</div>
 						<div class="newPrice__price">
-							{{ item.price }} ₸
+							{{ props.item.price }} ₸
 						</div>
 					</div>
 					
-					<div class="sale" v-if="item.sale">
+					<div class="sale" v-if="props.item.sale">
 						<div class="newPrice sale__newPrice">
 							<span class="newPrice-count sale__newPrice-count">
-								{{ item.newPrice }}₸
+								{{ props.item.newPrice }}₸
 							</span>
 							
 							<div class="newPrice__price sale__newPrice-wrapper">
-								<div class="sale__newPrice-inner">{{ item.price }} ₸</div>
+								<div class="sale__newPrice-inner">{{ props.item.price }} ₸</div>
 							</div>
 						</div>
-						<div class="sale-percent">-{{ item.sale }}%</div>
+						<div class="sale-percent">-{{ props.item.sale }}%</div>
 					</div>
 				</div>
 				
 				<div class="grade">
 					<img src="@/assets/mainPage/star.svg" class="star" alt="star">
-					<span class="rate item__rate">{{ item.grade }}</span>
+					<span class="rate item__rate">{{ props.item.grade }}</span>
 				</div>
 			</div>
 			
@@ -71,29 +72,17 @@
 	</div>
 </template>
 
-<script>
-export default {
+<script setup>
+import { ref } from 'vue';
 
-	props: {
-		item: {
-			type: Object,
-		},
-		
+const props = defineProps({
+	item: {
+		type: Object,
 	},
+});
 
-	data(){
-		return {
-			like: false,
-		}
-	},
+const like = ref(false);
 
-	methods: {
-		isLiked() {
-			this.like = !this.like;
-			console.log(this.like)
-		},
-	},
-}
 </script>
 
 <style lang="scss">

@@ -1,23 +1,17 @@
 <template>
 	<div class="term">
-		<div class="title term__title">{{ term.title }}</div>
-		<div class="text term__text">{{ term.text }}</div>
+		<div class="title term__title">{{ props.term.title }}</div>
+		<div class="text term__text">{{ props.term.text }}</div>
 	</div>
 </template>
 
-<script>
-export default {
-	props: {
-		term: {
-			type: Object,
-		},
-	},
-	data(){
-		return{
+<script setup>
 
-		}
-	}
-}
+const props = defineProps({
+	term: {
+		type: Object,
+	},
+})
 </script>
 
 <style lang="scss">

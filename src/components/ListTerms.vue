@@ -1,19 +1,17 @@
 <template>
 	<div class="list-terms">
-		<Term v-for="term in listTerms" :term="term" :key="term.id"/>
+		<Term v-for="term in props.listTerms" :term="term" :key="term.id"/>
 	</div>
 </template>
 
-<script>
+<script setup>
 import Term from './Term.vue';
-export default {
-    props: {
-        listTerms: {
-            type: Array,
-        }
-    },
-    components: { Term }
-}
+
+const props = defineProps({
+    listTerms: {
+        type: Array,
+    }
+})
 </script>
 
 <style lang="scss">

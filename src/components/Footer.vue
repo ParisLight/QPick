@@ -51,10 +51,8 @@
 	</footer>
 </template>
 
-<script>
-export default {
+<script setup lang="js">
 
-}
 </script>
 
 <style lang="scss">

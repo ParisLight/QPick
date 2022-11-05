@@ -4,7 +4,7 @@
 		<div 
 			class="list__wrapper" 
 		>
-		<Card v-for="item in itemsList" 
+		<Card v-for="item in props.itemsList" 
 			:key="item.index"
 			:item="item"
 		/>
@@ -12,22 +12,15 @@
 	</section>
 </template>
 
-<script>
+<script setup>
 import Card from './Card.vue';
-export default {
-    props: {
-		itemsList: {
-        	type: Array,
-      	},
-		
-    },
-    data() {
-      return {
-				
-		};
-    },
-    components: { Card }
-}
+
+const props = defineProps({
+	itemsList: {
+		type: Array,
+	},
+})
+
 </script>
 
 <style scoped lang="scss">
