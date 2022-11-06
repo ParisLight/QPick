@@ -3,6 +3,7 @@
 		<div class="title term__title">{{ props.term.title }}</div>
 		<div class="text term__text">{{ props.term.text }}</div>
 	</div>
+
 </template>
 
 <script setup>

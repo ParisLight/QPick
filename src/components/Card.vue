@@ -24,8 +24,12 @@
 			>
 				<img  
 					@click="props.item.addFavorites = !props.item.addFavorites"
-					:src="props.item.addFavorites ? 'src/assets/mainPage/liked.svg' : 'src/assets/mainPage/like.svg'" alt="like">
+					:src="props.item.addFavorites ? '../../public/mainPage/liked.svg' : '../../public/mainPage/like.svg'" alt="like">
 			</div>
+			
+
+
+
 			
 			<div class="wrap">
 				<div class="img-wrapper">
