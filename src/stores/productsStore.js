@@ -1,9 +1,6 @@
 import { defineStore} from "pinia";
 
-
 export const useStore = defineStore('products', {
-
-
 
 state: () => ({
 	headphones: [
@@ -15,6 +12,7 @@ state: () => ({
 			grade: '4.7',
 			category: 'Наушники',
 			newPrice: 3527,
+			addFavorites: false,
 		},
 		{
 			id: 2,
@@ -25,6 +23,8 @@ state: () => ({
 			category: 'Наушники',
 			newPrice: 3527,
 			sale: 20,
+			addFavorites: false,
+
 		},
 		{
 			id: 3,
@@ -32,7 +32,8 @@ state: () => ({
 			img: 'Apple EarPods2.png',
 			price: 2323,
 			grade: '4.7',
-			category: 'Наушники'
+			category: 'Наушники',
+			addFavorites: false,
 		},
 		{
 			id: 4,
@@ -43,6 +44,7 @@ state: () => ({
 			sale: 20,
 			grade: '4.7',
 			category: 'Наушники',
+			addFavorites: false,
 		},
 		{
 			id: 5,
@@ -50,7 +52,8 @@ state: () => ({
 			img: 'Apple EarPods.png',
 			price: 2322,
 			grade: '4.7',
-			category: 'Наушники'
+			category: 'Наушники',
+			addFavorites: false,
 		},
 		{
 			id: 6,
@@ -58,14 +61,15 @@ state: () => ({
 			img: 'Apple EarPods2.png',
 			price: 2323,
 			grade: '4.7',
-			category: 'Наушники'
+			category: 'Наушники',
+			addFavorites: false,
 		},
 	],
 
 	wireless: [
-		{ id: 7, name: 'Apple AirPods', img: 'Airpods.png', price: 2323, grade: '4.7'},
-		{ id: 8, name: 'GERLAX GH-04', img: 'Gerlax gh-04.png', price: 2323, grade: '4.7'},
-		{ id: 9, name: 'BOROFONE BO4', img: 'borofone bo4.png', price: 2323, grade: '4.7'},
+		{ id: 7, name: 'Apple AirPods', img: 'Airpods.png', price: 2323, grade: '4.7', addFavorites: false,},
+		{ id: 8, name: 'GERLAX GH-04', img: 'Gerlax gh-04.png', price: 2323, grade: '4.7', addFavorites: false,},
+		{ id: 9, name: 'BOROFONE BO4', img: 'borofone bo4.png', price: 2323, grade: '4.7', addFavorites: false,},
 	],
 	coversList: [
 		{ id: 10, name: 'Стеклянные', img: 'glasses.png', },
@@ -73,7 +77,6 @@ state: () => ({
 		{ id: 12, name: 'Кожаные', img: 'leather.png'},
 	],
 }),
-
 
 })
 

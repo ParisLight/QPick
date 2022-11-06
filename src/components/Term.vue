@@ -14,7 +14,7 @@ const props = defineProps({
 })
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .term{
 	padding: 15px 32px 25px 30px;
 	background: #fff;

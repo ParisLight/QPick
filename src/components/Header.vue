@@ -18,7 +18,7 @@
 					<router-link to="/Favorites" class="link">
 						<img class="favorites-img header__svg" src="../assets/Header/like.svg" alt="favorites">
 						<div class="counter">
-							{{ 2 }}
+							{{ favStore.favoritesArray.length }}
 						</div>
 					</router-link>
 					
@@ -28,7 +28,7 @@
 					<router-link to="/Basket" class="link">
 						<img class="basket-img header__svg" src="../assets/Header/basket.svg" alt="basket">
 						<div class="counter">
-							{{ 1 }}
+							{{ basket.basket.length }}
 						</div>
 					</router-link>
 				</div>
@@ -39,8 +39,13 @@
 
 <script setup>
 import { ref } from "vue";
+import {BasketStore} from "@/stores/basketStore.js";
+import { FavoritesStore } from "@/stores/favoritesStore.js";
 
 let count = ref(0);
+const basket = BasketStore();
+const favStore = FavoritesStore();
+
 
 </script>
 

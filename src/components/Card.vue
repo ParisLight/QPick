@@ -19,10 +19,12 @@
 		</div>
 		
 		<div v-if="props.item.price" class="item__wrapper">
-			<div class="like item__like" >
+			<div class="like item__like"
+				@click="favStore.addProduct(props.item, props.item.addFavorites)"
+			>
 				<img  
-					@click="like = !like"
-					:src="like ? 'src/assets/mainPage/liked.svg' : 'src/assets/mainPage/like.svg'" alt="like">
+					@click="props.item.addFavorites = !props.item.addFavorites"
+					:src="props.item.addFavorites ? 'src/assets/mainPage/liked.svg' : 'src/assets/mainPage/like.svg'" alt="like">
 			</div>
 			
 			<div class="wrap">
@@ -74,14 +76,17 @@
 
 <script setup>
 import { ref } from 'vue';
-
+import { BasketStore } from "@/stores/basketStore.js";
+import { FavoritesStore } from "@/stores/favoritesStore.js";
 const props = defineProps({
 	item: {
 		type: Object,
 	},
 });
 
-const like = ref(false);
+
+const bsk = BasketStore();
+const favStore = FavoritesStore();
 
 </script>
 

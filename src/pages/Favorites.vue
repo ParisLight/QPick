@@ -2,7 +2,10 @@
 	<div class="container">
 		<Header />
 		<div class="content">
-			Favorites
+			<div class="favorites">
+				<h3 class="title favorites__title">Избранное</h3>
+			</div>
+			
 		</div>
 		<Footer />
 	</div>
@@ -14,6 +17,18 @@ import Footer from '../components/Footer.vue';
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 
+.favorites{
+	&__title{
+		margin-top: 30px;
+	}
+}
+.title {
+	font-weight: 600;
+	color: #1C1C27;
+	font-size: 20px;
+	line-height: 24.38px;
+	margin-bottom: 20px;
+}
 </style>

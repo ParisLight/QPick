@@ -24,6 +24,7 @@ const props = defineProps({
 </script>
 
 <style scoped lang="scss">
+
 	.title{
 		font-weight: 600;
 		color: #838383;
