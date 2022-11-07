@@ -27,20 +27,20 @@
 			</div>
 			<div class="map-rightside">
 				<div class="map__contacts">
-					<a href="#" class="link map__link ">
+					<a href="https://web.whatsapp.com/" class="link map__link ">
 						<img class="map__img" src="../assets/ContactsPage/whatsapp.png" alt="whatsapp">
 					</a>
-					<a href="#" class="link map__link">
+					<a href="https://vk.com" class="link map__link">
 						<img class="map__img" src="../assets/ContactsPage/vk.png" alt="vk">
 					</a>
-					<a href="#" class="link map__link">
+					<a href="https://www.instagram.com/" class="link map__link">
 						<img class="map__img" src="../assets/ContactsPage/instagram.png" alt="instagram">
 					</a>
-					<a href="#" class="link map__link">
+					<a href="https://web.telegram.org/k/" class="link map__link">
 						<img class="map__img" src="../assets/ContactsPage/telegram.png" alt="telegram">					
 					</a>
 				</div>
-			</div>			
+			</div>				
 		</div>
 	</div>
 </template>

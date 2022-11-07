@@ -61,10 +61,10 @@
 						</div>
 					</div>
 					
-					<div class="grade">
-						<img src="@/assets/mainPage/star.svg" class="star" alt="star">
-						<span class="rate item__rate">{{ props.item.grade }}</span>
-					</div>
+						<div class="grade">
+							<img src="@/assets/mainPage/star.svg" class="star" alt="star">
+							<span class="rate item__rate">{{ props.item.grade }}</span>
+						</div>
 					</div>
 				</div>
 	</div>
@@ -72,7 +72,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { BasketStore } from "@/stores/basketStore.js";
+
 import { FavoritesStore } from "@/stores/favoritesStore.js";
 
 const props = defineProps({
@@ -82,7 +82,7 @@ const props = defineProps({
 });
 
 
-const bsk = BasketStore();
+
 const favStore = FavoritesStore();
 
 </script>

@@ -33,16 +33,16 @@
 				</div>
 			</div>
 			<div class="social footer__social">
-				<a href="#" class="link footer__link">
+				<a href="https://vk.com/" class="link footer__link">
 					<img class="social__item" src="../assets/Footer/VK.svg" alt="vk">
 				</a>
-				<a href="#" class="link footer__link">
+				<a href="https://www.instagram.com/" class="link footer__link">
 					<img class="social__item" src="../assets/Footer/Instagram.svg" alt="instagram">
 				</a>
-				<a href="#" class="link footer__link">
+				<a href="https://web.telegram.org/k/" class="link footer__link">
 					<img class="social__item" src="../assets/Footer/Telegram.svg" alt="telegram">
 				</a>
-				<a href="#" class="link footer__link ">
+				<a href="https://web.whatsapp.com/" class="link footer__link ">
 					<img class="social__item" src="../assets/Footer/Whatsapp.svg" alt="whatsapp">
 				</a>
 			</div>
