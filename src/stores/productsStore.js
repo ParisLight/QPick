@@ -67,14 +67,14 @@ state: () => ({
 	],
 
 	wireless: [
-		{ id: 7, name: 'Apple AirPods', img: 'Airpods.png', price: 2323, grade: '4.7', addFavorites: false,},
-		{ id: 8, name: 'GERLAX GH-04', img: 'Gerlax gh-04.png', price: 2323, grade: '4.7', addFavorites: false,},
-		{ id: 9, name: 'BOROFONE BO4', img: 'borofone bo4.png', price: 2323, grade: '4.7', addFavorites: false,},
+		{ id: 7, name: 'Apple AirPods', img: 'Airpods.png', price: 2323, grade: '4.7', addFavorites: false, category: 'Беспроводные',},
+		{ id: 8, name: 'GERLAX GH-04', img: 'Gerlax gh-04.png', price: 2323, grade: '4.7', addFavorites: false, category: 'Беспроводные',},
+		{ id: 9, name: 'BOROFONE BO4', img: 'borofone bo4.png', price: 2323, grade: '4.7', addFavorites: false, category: 'Беспроводные',},
 	],
 	coversList: [
-		{ id: 10, name: 'Стеклянные', img: 'glasses.png', },
-		{ id: 11, name: 'Силиконовые', img: 'silicone.png'},
-		{ id: 12, name: 'Кожаные', img: 'leather.png'},
+		{ id: 10, name: 'Стеклянные', img: 'glasses.png', category: 'Чехлы'},
+		{ id: 11, name: 'Силиконовые', img: 'silicone.png', category: 'Чехлы'},
+		{ id: 12, name: 'Кожаные', img: 'leather.png', category: 'Чехлы'},
 	],
 }),
 

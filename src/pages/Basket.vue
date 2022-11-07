@@ -12,7 +12,7 @@
 					</div>
 					<router-link to="/Home" class="link button basket__button">В каталог товаров</router-link>
 				</div>
-				<div class="basket-current">
+				<!-- <div class="basket-current">
 					<div class="product">
 						<img src="#" alt="product-img" class="product-img">
 						<div class="product-description">
@@ -20,8 +20,7 @@
 							<span class="product-price">2 927 ₸</span>
 						</div>
 					</div>
-						<!-- переделать с баскетом на фейворитс -->
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<Footer />

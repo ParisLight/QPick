@@ -35,9 +35,9 @@ const props = defineProps({
 	.list{
 		margin-top: 30px;
 		&__wrapper{
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 30px;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 30px;
 		}
 	}
 	
