@@ -4,7 +4,7 @@
 			
 			<a href="#" class="link item__link">
 				<div class="img-wrapper">
-					<img :src="`./src/assets/mainPage/${props.item.img}`" alt="item" class="item-img">
+					<img :src="imgProduct" alt="item" class="item-img">
 				</div>
 
 				<div class="item__description item__covers">
@@ -93,6 +93,7 @@ const favStore = FavoritesStore();
 const imgProduct = new URL(`../assets/mainPage/${props.item.img}`, import.meta.url)
 const imgLike = new URL(`../assets/mainPage/like.svg`, import.meta.url);
 const imgLiked = new URL(`../assets/mainPage/liked.svg`, import.meta.url);
+
 
 console.log(props.functions);
 </script>
