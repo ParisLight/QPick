@@ -29,8 +29,7 @@ const props = defineProps({
 </script>
 
 <style scoped lang="scss">
-
-	.title{
+.title{
 		font-weight: 600;
 		color: #838383;
 		font-size: 20px;
@@ -46,4 +45,12 @@ const props = defineProps({
 		}
 	}
 	
+
+@media (max-width: 900px) {
+	.list{
+		&__wrapper{
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
 </style>
