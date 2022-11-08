@@ -8,6 +8,7 @@
 
 <script setup>
 
+
 const props = defineProps({
 	term: {
 		type: Object,

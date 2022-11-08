@@ -6,5 +6,9 @@ export const BasketStore = defineStore('basketStore', {
     basket: [],
   }),
 
-	
+  actions: {
+    addBasketProduct(product){
+      this.basket.push(product);
+    }
+  }
 })

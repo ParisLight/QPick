@@ -21,14 +21,14 @@
 				@click="favStore.addProduct(props.item, props.item.addFavorites)">
 				<img  
 					@click="props.item.addFavorites = !props.item.addFavorites"
-					:src="props.item.addFavorites ? '../../public/mainPage/liked.svg' : '../../public/mainPage/like.svg'" alt="like">
+					:src="props.item.addFavorites ? imgLiked : imgLike" alt="like">
 			</div>
 			
 			
-				<div class="img-wrapper">
-					<img :src="`src/assets/mainPage/${props.item.img}`" alt="item" class="item-img">
-				</div>
-				<div class="item-bottom">
+				<router-link @click="props.functions(item)" to="/Product" class="img-wrapper link">
+					<img :src="imgProduct" alt="item" class="item-img">
+				</router-link>
+				<router-link to="/Product" class="item-bottom link">
 					<div class="item__description">
 						<div v-if="props.item.name" class="description">
 							{{ props.item.name }}
@@ -65,7 +65,7 @@
 							<img src="@/assets/mainPage/star.svg" class="star" alt="star">
 							<span class="rate item__rate">{{ props.item.grade }}</span>
 						</div>
-					</div>
+					</router-link>
 				</div>
 	</div>
 </template>
@@ -75,16 +75,26 @@ import { ref } from 'vue';
 
 import { FavoritesStore } from "@/stores/favoritesStore.js";
 
+
 const props = defineProps({
 	item: {
 		type: Object,
 	},
+
+	functions: {
+		type: Function,
+	}
 });
 
 
 
 const favStore = FavoritesStore();
 
+const imgProduct = new URL(`../assets/mainPage/${props.item.img}`, import.meta.url)
+const imgLike = new URL(`../assets/mainPage/like.svg`, import.meta.url);
+const imgLiked = new URL(`../assets/mainPage/liked.svg`, import.meta.url);
+
+console.log(props.functions);
 </script>
 
 <style lang="scss">

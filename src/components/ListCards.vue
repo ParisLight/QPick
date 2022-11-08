@@ -7,6 +7,7 @@
 		<Card v-for="item in props.itemsList" 
 			:key="item.index"
 			:item="item"
+			:functions="props.functions"
 		/>
 		</div>
 	</section>
@@ -19,6 +20,10 @@ const props = defineProps({
 	itemsList: {
 		type: Array,
 	},
+
+	functions: {
+		type: Function,
+	}
 })
 
 </script>

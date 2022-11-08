@@ -76,7 +76,15 @@ state: () => ({
 		{ id: 11, name: 'Силиконовые', img: 'silicone.png', category: 'Чехлы'},
 		{ id: 12, name: 'Кожаные', img: 'leather.png', category: 'Чехлы'},
 	],
+
+	currentProduct: null,
 }),
 
+actions: {
+	viewProduct(item){
+		this.currentProduct = item;
+		console.log(this.currentProduct)
+	}
+}
 })
 

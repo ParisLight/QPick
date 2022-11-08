@@ -3,13 +3,15 @@
 		<Header />
 		<div class="content">
 			<Banner />
-			<ListCards :itemsList="products.coversList">
+			<ListCards :itemsList="products.coversList" :functions="products.viewProduct">
 				Чехлы
 			</ListCards>
-			<ListCards :itemsList="products.headphones">
+			<ListCards 
+				:functions="products.viewProduct"
+				:itemsList="products.headphones">
 				Наушники
 			</ListCards>
-			<ListCards :itemsList="products.wireless">
+			<ListCards :itemsList="products.wireless" :functions="products.viewProduct">
 				Беспроводные наушники
 			</ListCards>
 		</div>

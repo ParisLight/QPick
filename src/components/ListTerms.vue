@@ -5,6 +5,7 @@
 </template>
 
 <script setup>
+
 import Term from './Term.vue';
 
 const props = defineProps({
