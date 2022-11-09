@@ -3,8 +3,13 @@
 		<Header />
 		<div class="content">
 			<div class="product">
-				<div class="title">{{ productsStore.currentProduct.name }}</div>
-				<div class="title">{{ productsStore.currentProduct.category }}</div>				
+				<div class="title">
+					{{ productsStore.name }}
+				</div>
+				<ListImg 
+					:product="productsStore.currentProduct"
+					:list-img="productsStore.imgArray"
+				/>	
 			</div>
 		</div>
 		<Footer />
@@ -16,10 +21,15 @@
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue";
 import { useStore } from "@/stores/productsStore.js"
+import ListImg from "../components/ListImg.vue";
 
 const productsStore = useStore();
 </script>
 
 <style lang="scss">
+	.product{
 
+	}
+
+	
 </style>

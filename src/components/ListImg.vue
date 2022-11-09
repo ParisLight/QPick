@@ -1,0 +1,58 @@
+<template>
+	<div class="list-img">
+		<div class="background">
+			<div class="img-top">
+				<img :src="props.product.addFavorites ? imgLiked : imgLike" alt="like">
+				<img src="../assets/Product/Ldnio.png" alt="Ldnio">
+			</div>
+			<div class="list">
+				<div class="product-img" v-for="img in props.product?.imgArray" :key="img">
+					<img :src="`/src/assets/mainPage/${img}`" alt="img">
+				</div>
+			</div>
+		</div>
+	</div>	
+</template>
+
+<script setup>
+	const props = defineProps({
+		product: {
+			type: Object,
+		},
+	})
+
+const imgLike = new URL(`../assets/mainPage/like.svg`, import.meta.url);
+const imgLiked = new URL(`../assets/mainPage/liked.svg`, import.meta.url);
+
+</script>
+
+<style scoped lang="scss">
+.background {
+	background: #FFFFFF;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 30px;
+	max-height: 668px;
+	height: 100%;
+	padding: 20px 25px 27px 35px;
+}
+
+.img-top{
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.list{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-content: center;
+}
+
+.product-img{
+	display: flex;
+	justify-content: center;
+	max-width: 250px;
+	max-height: 250px;
+	object-fit: cover;
+}
+</style>

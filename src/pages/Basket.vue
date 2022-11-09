@@ -36,8 +36,6 @@ import { BasketStore } from '@/stores/basketStore.js';
 
 const basketStore = BasketStore();
 
-console.log(basketStore.basket.length);
-// console.log(store);
 </script>
 
 <style scoped lang="scss">

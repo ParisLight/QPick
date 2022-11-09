@@ -94,8 +94,6 @@ const imgProduct = new URL(`../assets/mainPage/${props.item.img}`, import.meta.u
 const imgLike = new URL(`../assets/mainPage/like.svg`, import.meta.url);
 const imgLiked = new URL(`../assets/mainPage/liked.svg`, import.meta.url);
 
-
-console.log(props.functions);
 </script>
 
 <style lang="scss">
