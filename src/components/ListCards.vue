@@ -4,11 +4,10 @@
 		<div 
 			class="list__wrapper" 
 		>
-		<Card v-for="item in props.itemsList" 
-			:key="item.index"
-			:item="item"
-			:functions="props.functions"
-		/>
+		<transition-group name="list">
+			<Card v-for="item in props.itemsList" :key="item.id" :item="item" :functions="props.functions" class="list-item"/>
+		</transition-group>
+		
 		</div>
 	</section>
 </template>
@@ -44,6 +43,22 @@ const props = defineProps({
 			gap: 30px;
 		}
 	}
+
+
+
+.list-enter-active,
+.list-leave-active {
+	transition: all 0.5s;
+}
+
+.list-enter,
+.list-leave-to
+
+/* .list-leave-active до версии 2.1.8 */
+	{
+	opacity: 0;
+	transform: translateY(30px);
+}
 	
 
 @media (max-width: 900px) {

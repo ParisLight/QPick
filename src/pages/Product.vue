@@ -9,6 +9,7 @@
 				<ListImg 
 					:product="productsStore.currentProduct"
 					:list-img="productsStore.imgArray"
+					:functions="favoritesStoreUse.addProduct"
 				/>	
 			</div>
 		</div>
@@ -20,10 +21,14 @@
 
 import Footer from "../components/Footer.vue"
 import Header from "../components/Header.vue";
-import { useStore } from "@/stores/productsStore.js"
 import ListImg from "../components/ListImg.vue";
 
+import { useStore } from "@/stores/productsStore.js";
+import { FavoritesStore } from "@/stores/favoritesStore.js";
+
 const productsStore = useStore();
+
+const favoritesStoreUse = FavoritesStore();
 </script>
 
 <style lang="scss">

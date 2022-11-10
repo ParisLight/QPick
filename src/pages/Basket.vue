@@ -1,9 +1,9 @@
 <template>
 	<div class="container">
 		<Header 
-		:basketCount="basketStore.basket.length"/>
+		:basketCount="basketStoreUse.basket.length"/>
 		<div class="content">
-			<div class="basket" v-if="!basketStore.basket.length">
+			<div class="basket" v-if="!basketStoreUse.basket.length">
 				<div class="empty-basket">
 					<img src="../assets/BasketPage/BasketMain.png" alt="basket-main" class="main-img basket__main-img">
 					<div class="description basket__description">
@@ -34,7 +34,7 @@ import Footer from '../components/Footer.vue';
 import { BasketStore } from '@/stores/basketStore.js';
 
 
-const basketStore = BasketStore();
+const basketStoreUse = BasketStore();
 
 </script>
 

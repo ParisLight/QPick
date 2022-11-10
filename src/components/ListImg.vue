@@ -2,12 +2,13 @@
 	<div class="list-img">
 		<div class="background">
 			<div class="img-top">
-				<img :src="props.product.addFavorites ? imgLiked : imgLike" alt="like">
+				<img :src="props.product?.addFavorites ? imgLiked : imgLike" alt="like"
+				 @click="props.product.addFavorites = !props.product.addFavorites, props.functions(props.product, product.addFavorites)">
 				<img src="../assets/Product/Ldnio.png" alt="Ldnio">
 			</div>
 			<div class="list">
 				<div class="product-img" v-for="img in props.product?.imgArray" :key="img">
-					<img :src="`/src/assets/mainPage/${img}`" alt="img">
+					<img :src="imgUrl(img)" alt="img">
 				</div>
 			</div>
 		</div>
@@ -19,10 +20,17 @@
 		product: {
 			type: Object,
 		},
+
+		functions: {
+			type: Function,
+		}
 	})
 
 const imgLike = new URL(`../assets/mainPage/like.svg`, import.meta.url);
 const imgLiked = new URL(`../assets/mainPage/liked.svg`, import.meta.url);
+
+
+const imgUrl = (img) => new URL(`../assets/mainPage/${img}`, import.meta.url);
 
 </script>
 
@@ -46,6 +54,8 @@ const imgLiked = new URL(`../assets/mainPage/liked.svg`, import.meta.url);
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-content: center;
+	max-width: 853px;
+	
 }
 
 .product-img{
@@ -54,5 +64,6 @@ const imgLiked = new URL(`../assets/mainPage/liked.svg`, import.meta.url);
 	max-width: 250px;
 	max-height: 250px;
 	object-fit: cover;
+	margin: 0 auto;
 }
 </style>

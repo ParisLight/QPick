@@ -75,7 +75,6 @@ import { ref } from 'vue';
 
 import { FavoritesStore } from "@/stores/favoritesStore.js";
 
-
 const props = defineProps({
 	item: {
 		type: Object,
