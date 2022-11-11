@@ -25,7 +25,7 @@
 			</div>
 			
 			
-				<router-link @click="props.functions(item)" to="/Product" class="img-wrapper link">
+				<router-link @click="productsStoreUse.viewProduct(item)" to="/Product" class="img-wrapper link">
 					<img :src="imgProduct" alt="item" class="item-img">
 				</router-link>
 				<router-link to="/Product" class="item-bottom link">
@@ -71,22 +71,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
+import { useStore } from "@/stores/productsStore.js";
 import { FavoritesStore } from "@/stores/favoritesStore.js";
 
 const props = defineProps({
 	item: {
 		type: Object,
 	},
-
-	functions: {
-		type: Function,
-	}
 });
 
 
-
+const productsStoreUse = useStore();
 const favStore = FavoritesStore();
 
 const imgProduct = new URL(`../assets/mainPage/${props.item.img}`, import.meta.url)

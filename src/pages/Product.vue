@@ -9,7 +9,6 @@
 				<ListImg 
 					:product="productsStore.currentProduct"
 					:list-img="productsStore.imgArray"
-					:functions="favoritesStoreUse.addProduct"
 				/>	
 			</div>
 		</div>

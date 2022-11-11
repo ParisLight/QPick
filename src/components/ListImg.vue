@@ -3,7 +3,7 @@
 		<div class="background">
 			<div class="img-top">
 				<img :src="props.product?.addFavorites ? imgLiked : imgLike" alt="like"
-				 @click="props.product.addFavorites = !props.product.addFavorites, props.functions(props.product, product.addFavorites)">
+				 @click="props.product.addFavorites = !props.product.addFavorites, favoritesStoreUse.addProduct(props.product, product.addFavorites)">
 				<img src="../assets/Product/Ldnio.png" alt="Ldnio">
 			</div>
 			<div class="list">
@@ -19,14 +19,12 @@
 </template>
 
 <script setup>
+import { FavoritesStore } from '@/stores/favoritesStore.js';
+const favoritesStoreUse = FavoritesStore();
 	const props = defineProps({
 	product: {
 		type: Object,
 	},
-
-	functions: {
-		type: Function,
-	}
 })
 
 const imgLike = new URL(`../assets/mainPage/like.svg`, import.meta.url);

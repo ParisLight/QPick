@@ -5,7 +5,7 @@
 			class="list__wrapper" 
 		>
 		<transition-group name="list">
-			<Card v-for="item in props.itemsList" :key="item.id" :item="item" :functions="props.functions" class="list-item"/>
+			<Card v-for="item in props.itemsList" :key="item.id" :item="item" class="list-item"/>
 		</transition-group>
 		
 		</div>
@@ -19,10 +19,6 @@ const props = defineProps({
 	itemsList: {
 		type: Array,
 	},
-
-	functions: {
-		type: Function,
-	}
 })
 
 </script>
