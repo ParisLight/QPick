@@ -4,9 +4,17 @@
 		<div class="content">
 			<div class="favorites">
 				<h3 class="title favorites__title">Избранное</h3>
-				<ListCards v-if="favStore.covers.length" :itemsList="favStore.covers">Чехлы</ListCards>
-				<ListCards v-if="favStore.headphone.length" :itemsList="favStore.headphone">Наушники</ListCards>
-				<ListCards v-if="favStore.wireless.length" :itemsList="favStore.wireless">Беспроводные наушники</ListCards>
+				<ListCards v-if="favStore.covers.length" 
+					:itemsList="favStore.covers"
+					:functions="products.viewProduct">
+					Чехлы
+				</ListCards>
+				<ListCards v-if="favStore.headphone.length" 
+					:itemsList="favStore.headphone"
+					:functions="products.viewProduct">Наушники</ListCards>
+				<ListCards v-if="favStore.wireless.length" 
+					:itemsList="favStore.wireless"
+					:functions="products.viewProduct">Беспроводные наушники</ListCards>
 			</div>
 		</div>
 		<Footer class="favorites__footer"/>
@@ -19,8 +27,10 @@ import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import ListCards from '../components/ListCards.vue';
 import { FavoritesStore } from '@/stores/favoritesStore.js';
-
+import { useStore } from '@/stores/productsStore.js';
 const favStore = FavoritesStore();
+const products = useStore();
+
 
 </script>
 

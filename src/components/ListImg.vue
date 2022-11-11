@@ -11,20 +11,23 @@
 					<img :src="imgUrl(img)" alt="img">
 				</div>
 			</div>
+			<span class="product-name">
+				{{ props.product.name }}
+			</span>
 		</div>
 	</div>	
 </template>
 
 <script setup>
 	const props = defineProps({
-		product: {
-			type: Object,
-		},
+	product: {
+		type: Object,
+	},
 
-		functions: {
-			type: Function,
-		}
-	})
+	functions: {
+		type: Function,
+	}
+})
 
 const imgLike = new URL(`../assets/mainPage/like.svg`, import.meta.url);
 const imgLiked = new URL(`../assets/mainPage/liked.svg`, import.meta.url);
