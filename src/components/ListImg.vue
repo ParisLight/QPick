@@ -1,8 +1,9 @@
 <template>
-	<div class="list-img">
+	<div class="list-img list-img__current">
 		<div class="background">
 			<div class="img-top">
-				<img :src="props.product?.addFavorites ? imgLiked : imgLike" alt="like"
+				
+				<img :src="props.product?.addFavorites ? imgLiked : imgLike" alt="like" class="like"
 				 @click="props.product.addFavorites = !props.product.addFavorites, favoritesStoreUse.addProduct(props.product, product.addFavorites)">
 				<img src="../assets/Product/Ldnio.png" alt="Ldnio">
 			</div>
@@ -11,7 +12,7 @@
 					<img :src="imgUrl(img)" alt="img">
 				</div>
 			</div>
-			<span class="product-name">
+			<span class="product-name list-img__product-name">
 				{{ props.product.name }}
 			</span>
 		</div>
@@ -36,6 +37,17 @@ const imgUrl = (img) => new URL(`../assets/mainPage/${img}`, import.meta.url);
 </script>
 
 <style scoped lang="scss">
+
+.list-img{
+	&__product-name{
+		margin-top: 38px;
+	}
+
+	&__current{
+		margin-top: 20px;
+	}
+}
+
 .background {
 	background: #FFFFFF;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -59,6 +71,10 @@ const imgUrl = (img) => new URL(`../assets/mainPage/${img}`, import.meta.url);
 	
 }
 
+.like{
+	cursor: pointer;
+}
+
 .product-img{
 	display: flex;
 	justify-content: center;
@@ -66,5 +82,13 @@ const imgUrl = (img) => new URL(`../assets/mainPage/${img}`, import.meta.url);
 	max-height: 250px;
 	object-fit: cover;
 	margin: 0 auto;
+}
+
+.product-name{
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 30px;
+	color: #1C1C27;
+	display: block;
 }
 </style>

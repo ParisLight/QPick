@@ -82,5 +82,6 @@ const basketStoreUse = BasketStore();
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
+	
 }
 </style>

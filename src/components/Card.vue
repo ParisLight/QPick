@@ -90,7 +90,7 @@ const imgLiked = new URL(`../assets/mainPage/liked.svg`, import.meta.url);
 
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .item{
 	background: #fff;
 	border-radius: 30px;
