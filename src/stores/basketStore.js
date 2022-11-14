@@ -8,7 +8,7 @@ export const BasketStore = defineStore('basketStore', {
 
   actions: {
     addBasketProduct(product){
-      this.basket.push(product);
+      this.basket.includes(product) ? console.log('already exists') : this.basket.push(product); 
     }
   }
 })

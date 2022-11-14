@@ -12,7 +12,12 @@
 						<ProductCharacters :array-characters="productsStore.currentProduct.characters" />
 						<div class="product-buttons">
 							<router-link to="/#" class="link button product__buy-button">Купить!</router-link>
-							<router-link to="/#Basket" class="link button product__basket-button">Добавить в корзину</router-link>
+							<div class="link button product__basket-button"
+								@click="basketStoreUse.addBasketProduct(productsStore.currentProduct)"
+							>
+								<img src="../assets/Product/Basket.svg" class="product__basket-img" alt="basket">
+								Добавить в корзину
+							</div>
 						</div>
 					</div>
 					
@@ -33,9 +38,10 @@ import ListImg from "../components/ListImg.vue";
 import { useStore } from "@/stores/productsStore.js";
 import { FavoritesStore } from "@/stores/favoritesStore.js";
 import ProductCharacters from "../components/ProductCharacters.vue";
+import { BasketStore } from "@/stores/basketStore.js"
 
 const productsStore = useStore();
-
+const basketStoreUse = BasketStore();
 const favoritesStoreUse = FavoritesStore();
 </script>
 
@@ -56,6 +62,7 @@ const favoritesStoreUse = FavoritesStore();
 		margin-bottom: 18px;
 		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 		border-radius: 10px;
+		max-height: 45px;
 	}
 
 	&__basket-button{
@@ -65,6 +72,11 @@ const favoritesStoreUse = FavoritesStore();
 		padding: 13px 16px;
 		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-height: 45px;
+		cursor: pointer;
 	}
 }
 

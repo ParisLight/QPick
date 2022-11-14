@@ -1,26 +1,51 @@
 <template>
 	<div class="container">
-		<Header 
-		:basketCount="basketStoreUse.basket.length"/>
+		<Header />
 		<div class="content">
+			<h3 class="title basket__title">Корзина</h3>
 			<div class="basket" v-if="!basketStoreUse.basket.length">
 				<div class="empty-basket">
 					<img src="../assets/BasketPage/BasketMain.png" alt="basket-main" class="main-img basket__main-img">
 					<div class="description basket__description">
-						<span class="title">Корзина пуста</span>
+						<span class="title-main">Корзина пуста</span>
 						<div class="time-change">Но это никогда не поздно исправить :)</div>
 					</div>
 					<router-link to="/Home" class="link button basket__button">В каталог товаров</router-link>
 				</div>
-				<!-- <div class="basket-current">
-					<div class="product">
-						<img src="#" alt="product-img" class="product-img">
-						<div class="product-description">
-							<span class="product-name">Apple BYZ S852I</span>
+				
+			</div>
+			<div v-else class="basket-current">
+				<div class="basket-leftside">
+					<div class="product basket__product" v-for="product in basketStoreUse.basket" :key="product.id">
+						<div class="product-main">
+							<img :src="imgUrl(product.img)" alt="product-img" class="product-img">
+							<div class="product-description">
+								<span class="product-name">{{ product.name }}</span>
+								<span class="product-price">{{ product.price }} ₸</span>
+							</div>
+						</div>
+						<div class="product-bottom">
+							<div class="product-buttons">
+								<img src="../assets/BasketPage/minus.svg" alt="minus">
+								<span class="count-value">1</span>
+								<img src="../assets/BasketPage/plus.svg" alt="plus">
+					
+							</div>
 							<span class="product-price">2 927 ₸</span>
 						</div>
 					</div>
-				</div> -->
+				</div>
+				<div class="basket-rightside">
+					<div class="result-sum">
+						<div class="result-top">
+							<span class="result">Итого</span>
+							<span class="result-price">₸ 2 927</span>
+						</div>
+						<div class="result-bottom">
+							<router-link class="link button" to="#">Перейти к оформлению</router-link>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<Footer />
@@ -35,10 +60,17 @@ import { BasketStore } from '@/stores/basketStore.js';
 
 
 const basketStoreUse = BasketStore();
+const imgUrl = (img) => new URL(`../assets/mainPage/${img}`, import.meta.url);
 
 </script>
 
 <style scoped lang="scss">
+.title{
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	color: #1C1C27;
+}
 .basket{
 	text-align: center;
 	max-width: 100%;
@@ -58,9 +90,37 @@ const basketStoreUse = BasketStore();
 		margin: 0 auto;
 		margin-top: 30px;
 	}
+
+	&__title{
+		margin-top: 30px;
+		margin-bottom: 13px;
+	}
+
+	&__product{
+		margin-bottom: 13px;
+	}
+
+	&-leftside{
+		flex-grow: 1;
+	}
+
+	&-current{
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
-.title {
+.count{
+	&-minus{
+		color: #fff;
+		background: #FFCE7F;
+		padding: 14px 14px;
+		border-radius: 50%;
+		flex-grow: 1;
+	}
+}
+
+.title-main {
 	font-weight: 500;
 	font-size: 30px;
 	line-height: 37px;
@@ -73,6 +133,81 @@ const basketStoreUse = BasketStore();
 	color: #838383;
 }
 
+.product{
+	max-width: 633px;
+	max-height: 218px;
+	background: #fff;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 30px;
+	padding: 18px 18px 28px 17px;
+	&-img{
+		max-width: 147px;
+		max-height: 136px;
+		flex-grow: 1;
+	}
+
+	&-name{
+		font-weight: 500;
+		font-size: 17px;
+		line-height: 21px;
+		color: #1C1C27;
+	}
+
+	&-price{
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 18px;
+		color: #AAAAAA;
+	}
+
+	&-description{
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-main{
+		display: flex;
+		align-items: center;
+	}
+
+	&-bottom{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&-buttons{
+		max-width: 125px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+}
+
+.count-value{
+	font-weight: 600;
+	font-size: 17px;
+	line-height: 21px;
+	color: #000000;
+}
+
+.result{
+	&-sum{
+		padding: 21px;
+		max-height: 120px;
+		max-width: 350px;
+		background: #FFFFFF;
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+		border-radius: 30px;
+	}
+
+	&-top{
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+
 .button {
 	color: #fff;
 	background: #101010;
@@ -82,6 +217,8 @@ const basketStoreUse = BasketStore();
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
-	
 }
+
+
+
 </style>

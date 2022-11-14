@@ -12,9 +12,38 @@
 					<img :src="imgUrl(img)" alt="img">
 				</div>
 			</div>
-			<span class="product-name list-img__product-name">
-				{{ props.product.name }}
-			</span>
+
+			<div class="item__description">
+				<span class="product-name list-img__product-name">
+					{{ props.product.name }}
+				</span>
+			
+				<div v-if="props.product.price && !props.product.newPrice" class="price">
+					{{ props.product.price }} ₸
+				</div>
+			
+				<div class="newPrice" v-if="props.product.newPrice && !props.product.sale">
+					<div class="newPrice-count price ">
+						{{ props.product.newPrice }}₸
+					</div>
+					<div class="newPrice__price">
+						{{ props.product.price }} ₸
+					</div>
+				</div>
+			
+				<div class="sale" v-if="props.product.sale">
+					<div class="newPrice sale__newPrice">
+						<span class="newPrice-count sale__newPrice-count">
+							{{ props.product.newPrice }}₸
+						</span>
+			
+						<div class="newPrice__price sale__newPrice-wrapper">
+							<div class="sale__newPrice-inner">{{ props.product.price }} ₸</div>
+						</div>
+					</div>
+					<div class="sale-percent">-{{ props.product.sale }}%</div>
+				</div>
+			</div>
 		</div>
 	</div>	
 </template>
@@ -37,7 +66,6 @@ const imgUrl = (img) => new URL(`../assets/mainPage/${img}`, import.meta.url);
 </script>
 
 <style scoped lang="scss">
-
 .list-img{
 	&__product-name{
 		margin-top: 38px;
@@ -90,5 +118,61 @@ const imgUrl = (img) => new URL(`../assets/mainPage/${img}`, import.meta.url);
 	line-height: 30px;
 	color: #1C1C27;
 	display: block;
+}
+
+.item {
+
+	&__description {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+}
+
+
+.newPrice {
+	&__price {
+		text-decoration: line-through 2px;
+		color: #FFCE7F;
+		text-align: center;
+		font-size: 13px;
+	}
+}
+
+.price {
+	color: $active-color;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+
+.sale {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	&-percent {
+		font-weight: 600;
+		line-height: 19.86px;
+		color: #DF6464;
+	}
+
+	&__newPrice {
+		margin-right: 25px;
+
+		&-count {
+			color: #DF6464;
+			font-size: 19.17px;
+			font-weight: 600;
+		}
+
+		&-wrapper {
+			color: #DF6464;
+		}
+
+		&-inner {
+			color: #AAAAAA;
+		}
+	}
 }
 </style>
