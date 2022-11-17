@@ -6,6 +6,7 @@ state: () => ({
 	headphones: [
 		{
 			id: 1,
+			currentCount: 1,
 			name: "Apple BYZ S8521",
 			img: 'Apple BYZ S8521.png',
 			price: 2321,
@@ -35,6 +36,7 @@ state: () => ({
 		},
 		{
 			id: 2,
+			currentCount: 1,
 			name: "Apple EarPods",
 			img: 'Apple EarPods.png',
 			price: 2322,
@@ -65,6 +67,7 @@ state: () => ({
 		},
 		{
 			id: 3,
+			currentCount: 1,
 			name: "Apple EarPods",
 			img: 'Apple EarPods2.png',
 			price: 2323,
@@ -93,6 +96,7 @@ state: () => ({
 		},
 		{
 			id: 4,
+			currentCount: 1,
 			name: "Apple BYZ S8521",
 			img: 'Apple BYZ S8521.png',
 			price: 3527,
@@ -123,6 +127,7 @@ state: () => ({
 		},
 		{
 			id: 5,
+			currentCount: 1,
 			name: "Apple EarPods",
 			img: 'Apple EarPods.png',
 			price: 2322,
@@ -151,6 +156,7 @@ state: () => ({
 		},
 		{
 			id: 6,
+			currentCount: 1,
 			name: "Apple EarPods",
 			img: 'Apple EarPods2.png',
 			price: 2323,
@@ -181,6 +187,7 @@ state: () => ({
 
 	wireless: [
 		{ id: 7,
+			currentCount: 1,
 			name: 'Apple AirPods', 
 			img: 'Airpods.png', price: 2323, 
 			grade: '4.7', 
@@ -209,6 +216,7 @@ state: () => ({
 			
 
 		{ id: 8, 
+			currentCount: 1,
 			name: 'GERLAX GH-04', 
 			img: 'Gerlax gh-04.png', 
 			price: 2323, grade: '4.7', 
@@ -236,6 +244,7 @@ state: () => ({
 		},
 
 		{ id: 9, 
+			currentCount: 1,
 			name: 'BOROFONE BO4', 
 			img: 'borofone bo4.png', 
 			price: 2323, grade: '4.7', 
@@ -274,7 +283,9 @@ state: () => ({
 actions: {
 	viewProduct(item){
 		this.currentProduct = item;
-	}
+	},
+
+	
 }
 })
 

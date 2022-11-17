@@ -21,7 +21,6 @@ export default defineConfig({
     },
   },
 
-  base: '/QPick/',
   build: {
     outDir: './docs',
   },
