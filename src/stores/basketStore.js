@@ -4,7 +4,7 @@ import { ref } from "vue";
 export const BasketStore = defineStore('basketStore', {
 	state: () => ({
     basket: [],
-    currentSum: null,
+    currentSum: 0,
   }),
 
   getters: {
@@ -12,7 +12,14 @@ export const BasketStore = defineStore('basketStore', {
       let result = 0;
       this.basket.forEach(item => item.newPrice ? result += item.newPrice :  result += item.price)
       return result;
-    }
+    },
+
+    // getTotalPrice(){
+    //   let sum = 0
+    //   this.basket.forEach(item => item.)
+    // }
+
+    
   },
 
   actions: {
@@ -33,6 +40,16 @@ export const BasketStore = defineStore('basketStore', {
       if(product.currentCount > 1){
         product.currentCount--;
       } 
+    },
+    getSumCurrentProduct(product){
+      return product.newPrice ? product.newPrice * product.currentCount : product.price * product.currentCount;
+      
+    },
+
+    getTotal(){
+      let sum = 0;
+      
     }
   },
+
 })

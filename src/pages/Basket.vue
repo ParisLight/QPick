@@ -33,7 +33,7 @@
 								<img src="../assets/BasketPage/plus.svg" alt="plus" @click="basketStoreUse.plusProduct(product)">
 					
 							</div>
-							<span class="product-price">{{ product.newPrice ? product.newPrice : product.price }} ₸</span>
+							<span class="product-price">{{ basketStoreUse.getSumCurrentProduct(product) }} ₸</span>
 						</div>
 						
 					</div>
@@ -42,7 +42,7 @@
 					<div class="result-sum">
 						<div class="result-top">
 							<span class="result">ИТОГО</span>
-							<span class="result-price">₸ {{ basketStoreUse.getSum }} </span>
+							<span class="result-price">₸ {{ basketStoreUse.currentSum }} </span>
 						</div>
 						<div class="result-bottom">
 							<router-link class="link button" to="#">Перейти к оформлению</router-link>
