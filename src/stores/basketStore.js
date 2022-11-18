@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
 
 export const BasketStore = defineStore('basketStore', {
 	state: () => ({
@@ -9,17 +8,10 @@ export const BasketStore = defineStore('basketStore', {
 
   getters: {
     getSum(){
-      let result = 0;
-      this.basket.forEach(item => item.newPrice ? result += item.newPrice :  result += item.price)
-      return result;
+      this.currentSum = 0;
+      this.basket.forEach(item => item.newPrice ? this.currentSum += item.newPrice * item.currentCount : this.currentSum += item.price * item.currentCount);
+      return this.currentSum;
     },
-
-    // getTotalPrice(){
-    //   let sum = 0
-    //   this.basket.forEach(item => item.)
-    // }
-
-    
   },
 
   actions: {
@@ -43,13 +35,7 @@ export const BasketStore = defineStore('basketStore', {
     },
     getSumCurrentProduct(product){
       return product.newPrice ? product.newPrice * product.currentCount : product.price * product.currentCount;
-      
     },
-
-    getTotal(){
-      let sum = 0;
-      
-    }
   },
 
 })

@@ -10,7 +10,6 @@ export const FavoritesStore = defineStore('favoritesStore', {
 
 	actions: {
 		addProduct(target, flag){
-			// flag ? this.favoritesArray.push(target) : this.favoritesArray = this.favoritesArray.filter(product => product.id != target.id);
 			if(flag){
 				this.favoritesArray.push(target);
 				if(target.category == 'Наушники'){

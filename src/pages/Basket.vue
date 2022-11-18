@@ -42,7 +42,7 @@
 					<div class="result-sum">
 						<div class="result-top">
 							<span class="result">ИТОГО</span>
-							<span class="result-price">₸ {{ basketStoreUse.currentSum }} </span>
+							<span class="result-price">₸ {{ basketStoreUse.getSum }} </span>
 						</div>
 						<div class="result-bottom">
 							<router-link class="link button" to="#">Перейти к оформлению</router-link>
