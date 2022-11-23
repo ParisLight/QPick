@@ -16,13 +16,30 @@ import Product from '@/pages/Product.vue';
 
 export default createRouter({
 	history: createWebHashHistory(),
-
 	routes: [
-		{ path: '/Home', component: Home, alias: '/' },
-		{	path: '/Service', component: Service },
-		{ path: '/Contacts', component: Contacts },
-		{ path: '/Basket', component : Basket },
-		{ path: '/Favorites', component: Favorites },
-		{ path: '/Product', component: Product},
+		{
+			path: '/Main', 
+			component: () => import('@/pages/Layout.vue'),
+			children: [
+				{ path: '/Home',
+				  component: () =>  import ('@/pages/MainPage.vue'),
+				  alias: '/'},
+
+				{ path: '/Service',
+				 component: () => import ('@/pages/ServicePage.vue')},
+
+				{ path: '/Contacts',
+				 component: () => import ('@/pages/Contacts.vue')},
+
+				{ path: '/Basket',
+				 component : () => import ('@/pages/Basket.vue')},
+
+				{ path: '/Favorites',
+				 component: () => import ('@/pages/Favorites.vue')},
+				 
+				{ path: '/Product/:id',
+				 component: () => import ('@/pages/Product.vue')},
+			]
+		}
 	]
 })

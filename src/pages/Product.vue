@@ -1,8 +1,7 @@
 <template>
 	<div class="product">
-		<div class="container">
-			<Header />
-			<div class="content">
+		
+			
 				<div class="product">
 					<div class="title">
 						{{ productsStore.currentProduct.category }}
@@ -23,9 +22,7 @@
 					
 				</div>
 			</div>
-			<Footer />
-		</div>
-	</div>
+			
 	
 </template>
 

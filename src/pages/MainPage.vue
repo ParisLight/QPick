@@ -1,22 +1,21 @@
 <template>
-	<div class="container">
-		<Header />
-		<div class="content">
+	<!-- <div class="container"> -->
+		<!-- <Header /> -->
+		
 			<Banner />
-			<ListCards :itemsList="products.coversList" :functions="products.viewProduct">
+			<ListCards :itemsList="products.coversList" >
 				Чехлы
 			</ListCards>
 			<ListCards 
-				:functions="products.viewProduct"
 				:itemsList="products.headphones">
 				Наушники
 			</ListCards>
-			<ListCards :itemsList="products.wireless" :functions="products.viewProduct">
+			<ListCards :itemsList="products.wireless" >
 				Беспроводные наушники
 			</ListCards>
-		</div>
-		<Footer style="margin-top: 60px;" />
-	</div>
+		
+		<!-- <Footer style="margin-top: 60px;" /> -->
+	<!-- </div> -->
 </template>
 
 <script setup>

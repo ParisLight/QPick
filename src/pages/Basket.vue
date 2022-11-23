@@ -1,7 +1,4 @@
 <template>
-	<div class="container">
-		<Header />
-		<div class="content">
 			<h3 class="title basket__title">Корзина</h3>
 			<div class="basket" v-if="!basketStoreUse.basket.length">
 				<div class="empty-basket">
@@ -50,9 +47,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<Footer />
-	</div>
 </template>
 
 <script setup>

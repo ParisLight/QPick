@@ -1,7 +1,4 @@
 <template>
-	<div class="container">
-		<Header />
-		<div class="content">
 			<div class="favorites">
 				<h3 class="title favorites__title">Избранное</h3>
 				<ListCards v-if="favStore.covers.length" 
@@ -16,9 +13,6 @@
 					:itemsList="favStore.wireless"
 				>Беспроводные наушники</ListCards>
 			</div>
-		</div>
-		<Footer class="favorites__footer"/>
-	</div>
 </template>
 
 <script setup>

@@ -1,11 +1,11 @@
 <template>
-		<div class="container service__container">
-			<Header />
+		
+			
 			<div class="content">
 				<ListTerms :listTerms="arrayTerms.terms" class="terms" />	
 			</div>
-			<Footer />
-		</div>
+			
+		
 </template>
 
 <script setup>

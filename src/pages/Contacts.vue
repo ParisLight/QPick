@@ -1,11 +1,11 @@
 <template>
-	<div class="container">
-			<Header />
-			<div class="content contacts__content">
+	
+		
+			<div class="contacts__content">
 				<Map />
 			</div>
-			<Footer />
-	</div>
+			
+	
 </template>
 
 <script setup>

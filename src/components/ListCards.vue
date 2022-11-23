@@ -1,9 +1,7 @@
 <template>
 	<section class="list">
 		<h3 class="title"><slot></slot></h3>
-		<div 
-			class="list__wrapper" 
-		>
+		<div class="list__wrapper" >
 		<transition-group name="list">
 			<Card v-for="item in props.itemsList" :key="item.id" :item="item" class="list-item"/>
 		</transition-group>

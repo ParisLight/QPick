@@ -25,7 +25,7 @@
 			</div>
 			
 			
-				<router-link @click="productsStoreUse.viewProduct(item)" to="/Product" class="img-wrapper link">
+				<router-link @click="productsStoreUse.viewProduct(item)" :to="`/Product/${props.item.id}`" class="img-wrapper link">
 					<img :src="imgProduct" alt="item" class="item-img">
 				</router-link>
 				<router-link to="/Product" class="item-bottom link">

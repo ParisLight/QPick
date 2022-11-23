@@ -51,7 +51,7 @@
 	</footer>
 </template>
 
-<script setup lang="js">
+<script setup>
 
 </script>
 
@@ -60,6 +60,8 @@
 		background: #fff;
 		border-radius: 30px 30px 0 0;
 		flex-shrink: 0;
+		position: relative;
+		bottom: 0;
 		&__link:not(:first-child){
 			margin-left: 18px;
 		}
